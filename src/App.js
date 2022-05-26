@@ -13,7 +13,39 @@ import {
 } from "./pages";
 
 function App() {
-  return <h4>comfy sloth starter</h4>;
+  return (
+    <Router>
+      <Navbar></Navbar>
+      <Sidebar></Sidebar>
+
+      <Switch>
+        <Route exact path="/">
+          <Home></Home>
+        </Route>
+        <Route exact path="/about">
+          <About></About>
+        </Route>
+        <Route exact path="/cart">
+          <Cart></Cart>
+        </Route>
+        <Route exact path="/products">
+          <Products></Products>
+        </Route>
+        <Route
+          exact
+          path="/products/:id"
+          children={<SingleProduct></SingleProduct>}
+        ></Route>
+        <Route exact path="/checkout">
+          <Checkout></Checkout>
+        </Route>
+        <Route path="*">
+          <Error></Error>
+        </Route>
+      </Switch>
+      <Footer></Footer>
+    </Router>
+  );
 }
 
 export default App;
