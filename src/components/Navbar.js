@@ -21,12 +21,13 @@ const Nav = () => {
           </button>
         </div>
         <div>
+          {/* dynamic links for our react router */}
           <ul className="nav-links">
             {links.map((link) => {
               const { id, text, url } = link;
               return (
                 <li key={id}>
-                  <Link to={url}></Link>
+                  <Link to={url}>{text}</Link>
                 </li>
               );
             })}
