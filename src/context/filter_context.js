@@ -20,7 +20,6 @@ const initialState = {
 const FilterContext = React.createContext();
 
 export const FilterProvider = ({ children }) => {
-  
 	const { products } = useProductsContext();
 	useEffect(() => {
 		dispatch({ type: LOAD_PRODUCTS, payload: products });
@@ -28,7 +27,7 @@ export const FilterProvider = ({ children }) => {
 
 	const [state, dispatch] = useReducer(reducer, initialState);
 	return (
-		<FilterContext.Provider value="filter context">
+		<FilterContext.Provider value={{ ...state }}>
 			{children}
 		</FilterContext.Provider>
 	);
