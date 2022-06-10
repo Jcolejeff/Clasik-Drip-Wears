@@ -10,12 +10,24 @@ import {
 } from "../actions";
 
 const filter_reducer = (state, action) => {
-  // created  a new array so we don't reference the same array for both state values
+	// created  a new array so we don't reference the same array for both state values
 	if (action.type === LOAD_PRODUCTS) {
 		return {
 			...state,
 			all_products: [...action.payload],
 			filtered_products: [...action.payload],
+		};
+	}
+	if (action.type === SET_LISTVIEW) {
+		return {
+			...state,
+			grid_view: false,
+		};
+	}
+	if (action.type === SET_GRIDVIEW) {
+		return {
+			...state,
+			grid_view: true,
 		};
 	}
 
