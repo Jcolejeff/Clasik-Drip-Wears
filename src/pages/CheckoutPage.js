@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { PageHero, StripeCheckout } from "../components";
+import { PageHero, Paystack } from "../components";
 // extra imports
 import { useCartContext } from "../context/cart_context";
 import { Link } from "react-router-dom";
@@ -11,7 +11,7 @@ const CheckoutPage = () => {
 	return (
 		<main>
 			<PageHero title="checkout"></PageHero>
-			<Wrapper className="page">
+			<Wrapper className="page-100">
 				{cart.length < 1 ? (
 					<div className="empty">
 						<h3>your cart is empty</h3>
@@ -20,7 +20,7 @@ const CheckoutPage = () => {
 						</Link>
 					</div>
 				) : (
-					<StripeCheckout></StripeCheckout>
+					<Paystack></Paystack>
 				)}
 			</Wrapper>
 		</main>

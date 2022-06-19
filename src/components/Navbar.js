@@ -53,6 +53,8 @@ const NavContainer = styled.nav`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border-bottom: 1px solid #e6e6e6;
+	margin-block-end: 4rem;
 
 	.nav-center {
 		width: 90vw;

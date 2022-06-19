@@ -38,8 +38,13 @@ const FeaturedProducts = () => {
 
 const Wrapper = styled.section`
 	background: var(--clr-grey-10);
+
+	@media (min-width: 768px) {
+		margin-block-start: 10rem;
+	}
+
 	.featured {
-		margin: 4rem auto;
+		margin: 1rem auto;
 		display: grid;
 		gap: 2.5rem;
 		img {

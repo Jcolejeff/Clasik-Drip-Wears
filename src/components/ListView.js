@@ -29,6 +29,17 @@ const Wrapper = styled.section`
 	display: grid;
 	row-gap: 3rem;
 
+	article {
+		display: flex;
+		box-shadow: var(--light-shadow);
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 1rem;
+	}
+	div {
+		text-align: center;
+	}
 	img {
 		width: 100%;
 		display: block;

@@ -43,7 +43,7 @@ const Wrapper = styled.section`
 
 	@media (max-width: 768px) {
 		div {
-			width: 80%;
+			width: 100%;
 		}
 	}
 	justify-content: center;

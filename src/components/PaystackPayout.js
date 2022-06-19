@@ -4,7 +4,7 @@ import { PaystackButton } from "react-paystack";
 import { useCartContext } from "../context/cart_context";
 import { useUserContext } from "../context/user_context";
 
-function App() {
+function PaystackPayout() {
 	const { clearCart, cart, total_amount, shipping_fee } = useCartContext();
 	const { myUser } = useUserContext();
 	console.log(myUser);
@@ -48,29 +48,18 @@ function App() {
 
 	const componentProps = {
 		...config,
-		text: "Paystack Button Implementation",
+		text: "Pay Now",
 		onSuccess: (reference) => handlePaystackSuccessAction(reference),
 		onClose: handlePaystackCloseAction,
 	};
 
 	return (
-		<div className="App">
-			<header className="App-header">
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
+		<div className="page-100">
+			<h1>Paystack Button Implementation</h1>
+
 			<PaystackButton className="paystack" custom_fields {...componentProps} />
 		</div>
 	);
 }
 
-export default App;
+export default PaystackPayout;
