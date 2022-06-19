@@ -18,7 +18,6 @@ const CartTotals = () => {
 					</h5>
 					<p>
 						shipping : <span>{formatPrice(shipping_fee)}</span>
-						<hr />
 						<h5>
 							Total : <span>{formatPrice(total_amount + shipping_fee)}</span>
 						</h5>
@@ -41,6 +40,12 @@ const CartTotals = () => {
 const Wrapper = styled.section`
 	margin-top: 3rem;
 	display: flex;
+
+	@media (max-width: 768px) {
+		div {
+			width: 80%;
+		}
+	}
 	justify-content: center;
 	article {
 		border: 1px solid var(--clr-grey-8);
@@ -51,7 +56,8 @@ const Wrapper = styled.section`
 	h5,
 	p {
 		display: grid;
-		grid-template-columns: 200px 1fr;
+		grid-template-columns: 100px 1fr;
+		gap: 0.5rem;
 	}
 	p {
 		text-transform: capitalize;
@@ -60,7 +66,6 @@ const Wrapper = styled.section`
 		margin-top: 2rem;
 	}
 	@media (min-width: 776px) {
-		justify-content: flex-end;
 	}
 	.btn {
 		width: 100%;

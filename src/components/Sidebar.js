@@ -50,6 +50,7 @@ const Sidebar = () => {
 
 const SidebarContainer = styled.div`
 	text-align: center;
+
 	.sidebar-header {
 		display: flex;
 		justify-content: space-between;
@@ -57,7 +58,7 @@ const SidebarContainer = styled.div`
 		padding: 1rem 1.5rem;
 	}
 	.close-btn {
-		font-size: 2rem;
+		font-size: 1.4rem;
 		background: transparent;
 		border-color: transparent;
 		color: var(--clr-primary-5);
@@ -71,14 +72,15 @@ const SidebarContainer = styled.div`
 	}
 	.logo {
 		justify-self: center;
-		height: 45px;
+		height: 30px;
 	}
 	.links {
-		margin-bottom: 2rem;
+		margin-bottom: 10rem;
+		margin-top: 10rem;
 	}
 	.links a {
 		display: block;
-		text-align: left;
+		text-align: center;
 		font-size: 1rem;
 		text-transform: capitalize;
 		padding: 1rem 1.5rem;
@@ -97,12 +99,12 @@ const SidebarContainer = styled.div`
 	.sidebar {
 		position: fixed;
 		top: 0;
-		left: 0;
-		width: 100%;
+		right: 0;
+		width: 70%;
 		height: 100%;
 		background: var(--clr-white);
 		transition: var(--transition);
-		transform: translate(-100%);
+		transform: translate(100%);
 		z-index: -1;
 	}
 	.show-sidebar {

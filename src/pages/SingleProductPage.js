@@ -55,6 +55,7 @@ const SingleProductPage = () => {
 		stock,
 		id: sku,
 	} = product;
+	// add size to api
 	return (
 		<Wrapper>
 			<PageHero title={name} product />
