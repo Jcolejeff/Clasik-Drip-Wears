@@ -117,7 +117,7 @@ const filter_reducer = (state, action) => {
 				...state.filters,
 				text: "",
 				category: "all",
-				company: "all",
+				brand: "all",
 				color: "all",
 				price: state.filters.max_price,
 				shipping: false,

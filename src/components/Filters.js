@@ -217,7 +217,7 @@ const Wrapper = styled.section`
 	.btn {
 		text-transform: capitalize;
 		@media (max-width: 768px) {
-			margin-left: 5rem;
+			margin-left: 8rem;
 		}
 		margin-top: 0.8rem;
 	}
