@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect, useReducer } from "react";
 import reducer from "../reducers/products_reducer";
-import { products_url as url } from "../utils/constants";
+// import { products_url as url } from "../utils/constants";
 import {
 	SIDEBAR_OPEN,
 	SIDEBAR_CLOSE,
@@ -37,9 +37,15 @@ export const ProductsProvider = ({ children }) => {
 	const fetchProducts = async (url) => {
 		dispatch({ type: GET_PRODUCTS_BEGIN });
 		try {
-			const response = await axios.get(url);
-			const products = response.data;
-			dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products });
+			const newData = await axios.get(
+				"https://limitless-dusk-73909.herokuapp.com/api/clasikdrips/?populate=*"
+			);
+			const newItems = newData.data.data;
+			const newProducts = newItems.map((product) => {
+				return { id: product.id, ...product.attributes };
+			});
+
+			dispatch({ type: GET_PRODUCTS_SUCCESS, payload: newProducts });
 		} catch (error) {
 			dispatch({ type: GET_PRODUCTS_ERROR });
 		}
@@ -48,14 +54,18 @@ export const ProductsProvider = ({ children }) => {
 		dispatch({ type: GET_SINGLE_PRODUCT_BEGIN });
 		try {
 			const response = await axios.get(url);
-			const singleProduct = response.data;
-			dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: singleProduct });
+
+			const singleProduct = response.data.data;
+			const newProduct = { id: singleProduct.id, ...singleProduct.attributes };
+
+			dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: newProduct });
 		} catch (error) {
 			dispatch({ type: GET_SINGLE_PRODUCT_ERROR });
+			console.log(error);
 		}
 	};
 	useEffect(() => {
-		fetchProducts(url);
+		fetchProducts();
 	}, []);
 	return (
 		<ProductsContext.Provider

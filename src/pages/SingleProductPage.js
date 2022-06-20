@@ -8,7 +8,6 @@ import {
 	Error,
 	ProductImages,
 	AddToCart,
-	Stars,
 	PageHero,
 } from "../components";
 import styled from "styled-components";
@@ -25,7 +24,7 @@ const SingleProductPage = () => {
 	} = useProductsContext();
 
 	useEffect(() => {
-		fetchSingleProduct(`${url}${id}`);
+		fetchSingleProduct(`${url}${id}?populate=*`);
 		// eslint-disable-next-line
 	}, [id]);
 
@@ -44,17 +43,8 @@ const SingleProductPage = () => {
 		return <Error />;
 	}
 
-	const {
-		name,
-		price,
-		description,
-		images,
-		stars,
-		reviews,
-		company,
-		stock,
-		id: sku,
-	} = product;
+	const { name, price, description, brand, images, stock, id: sku } = product;
+
 	// add size to api
 	return (
 		<Wrapper>
@@ -67,8 +57,7 @@ const SingleProductPage = () => {
 					<ProductImages images={images}></ProductImages>
 					<section className="content">
 						<h2>{name}</h2>
-						<Stars stars={stars} reviews={reviews}></Stars>
-						<h5 className="price">{formatPrice(price)}</h5>
+						<h4 className="price">{price}</h4>
 						<p className="desc">{description}</p>
 						<p className="info">
 							<span>Available :</span> {stock > 0 ? "In Stock" : "Out of Stock"}
@@ -79,7 +68,7 @@ const SingleProductPage = () => {
 						</p>
 						<p className="info">
 							<span>Brand :</span>
-							{company}
+							{brand}
 						</p>
 						<hr />
 						{stock > 0 && <AddToCart product={product}></AddToCart>}

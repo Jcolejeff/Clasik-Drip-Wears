@@ -9,7 +9,7 @@ const Filters = () => {
 		filters: {
 			text,
 			category,
-			company,
+			brand,
 			color,
 			min_price,
 			max_price,
@@ -22,7 +22,7 @@ const Filters = () => {
 	} = useFilterContext();
 
 	const categories = getUniqueValues(all_products, "category");
-	const companies = getUniqueValues(all_products, "company");
+	const brands = getUniqueValues(all_products, "brand");
 	const colors = getUniqueValues(all_products, "colors");
 
 	return (
@@ -64,14 +64,14 @@ const Filters = () => {
 					</div>
 					{/* companies */}
 					<div className="form-control">
-						<h5>company</h5>
+						<h5>Brands</h5>
 						<select
-							name="company"
-							value={company}
+							name="brand"
+							value={brand}
 							onChange={updateFilters}
 							className="company"
 						>
-							{companies.map((item, index) => {
+							{brands.map((item, index) => {
 								return (
 									<option key={index} value={item}>
 										{item}
