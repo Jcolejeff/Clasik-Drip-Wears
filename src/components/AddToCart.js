@@ -131,7 +131,8 @@ const Wrapper = styled.section`
 		opacity: 1;
 	}
 	.btn-container {
-		margin-top: 2rem;
+		margin-top: 4rem;
+		margin-left: 6rem;
 	}
 
 	.btn {

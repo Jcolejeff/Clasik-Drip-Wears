@@ -6,7 +6,7 @@ const Contact = () => {
 		<Wrapper>
 			{/* use formspree to collect email */}
 			<div className="section-center">
-				<h3>join our newsletter and get 20% off</h3>
+				<h3>join our newsletter and get 5% off</h3>
 				<div className="content">
 					<p>
 						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta,

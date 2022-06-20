@@ -60,6 +60,7 @@ const Wrapper = styled.section`
 		display: block;
 		width: 148px;
 		margin: 0 auto;
+		margin-top: 3rem;
 		text-align: center;
 	}
 	@media (min-width: 576px) {

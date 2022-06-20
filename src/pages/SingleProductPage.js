@@ -57,7 +57,7 @@ const SingleProductPage = () => {
 					<ProductImages images={images}></ProductImages>
 					<section className="content">
 						<h2>{name}</h2>
-						<h4 className="price">{price}</h4>
+						<h4 className="price">NGN {price}</h4>
 						<p className="desc">{description}</p>
 						<p className="info">
 							<span>Available :</span> {stock > 0 ? "In Stock" : "Out of Stock"}
