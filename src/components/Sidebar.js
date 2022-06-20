@@ -56,6 +56,7 @@ const SidebarContainer = styled.div`
 		justify-content: space-between;
 		align-items: center;
 		padding: 1rem 1.5rem;
+		margin-top: -1rem;
 	}
 	.close-btn {
 		font-size: 1.4rem;
@@ -72,11 +73,11 @@ const SidebarContainer = styled.div`
 	}
 	.logo {
 		justify-self: center;
-		height: 50px;
+		height: 80px;
 	}
 	.links {
 		margin-bottom: 10rem;
-		margin-top: 10rem;
+		margin-top: 8rem;
 	}
 	.links a {
 		display: block;

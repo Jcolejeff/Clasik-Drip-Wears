@@ -68,57 +68,74 @@ function PaystackPayout() {
 	};
 
 	return (
-		<Wrapper className="page-100">
+		<Wrapper>
 			<form
 				onSubmit={(e) => {
 					e.preventDefault();
 				}}
-			>
-				<StyledPaystackPayout>
-					<div className="form-control">
-						<label htmlFor="name">Name : </label>
-						<input
-							type="text"
-							required
-							id="name"
-							name="name"
-							value={name}
-							onChange={(e) => setName(e.target.value)}
-						/>
-					</div>
-					<div className="form-control">
-						<label htmlFor="address">Address: </label>
-						<input
-							required
-							type="text"
-							id="address"
-							name="address"
-							value={address}
-							onChange={(e) => setAddress(e.target.value)}
-						/>
-					</div>
-					<div className="form-control">
-						<label htmlFor="phone">Phone: </label>
-						<input
-							required
-							type="text"
-							id="phone"
-							name="phone"
-							value={phone}
-							onChange={(e) => setPhone(e.target.value)}
-						/>
-					</div>
-					<div className="form-control">
-						<label htmlFor="email">Email : </label>
-						<input
-							type="email"
-							id="email"
-							name="email"
-							value={myUser ? myUser.email : null}
-						/>
-					</div>
-				</StyledPaystackPayout>
-			</form>
+			></form>
+			<Section>
+				<div className="group">
+					<input
+						type="text"
+						className="input"
+						placeholder="
+						Full name"
+						id="name"
+						name="name"
+						required
+						value={name}
+						onChange={(e) => setName(e.target.value)}
+					/>
+					<label htmlFor="name" className="label">
+						Full name
+					</label>
+				</div>
+				<div className="group">
+					<input
+						type="text"
+						className="input"
+						placeholder="Shipping Address"
+						id="address"
+						name="address"
+						required
+						value={address}
+						onChange={(e) => setAddress(e.target.value)}
+					/>
+					<label htmlFor="address" className="label">
+						Shipping Address
+					</label>
+				</div>
+				<div className="group">
+					<input
+						type="text"
+						className="input"
+						placeholder="Phone Number"
+						id="phone"
+						name="phone"
+						required
+						value={phone}
+						onChange={(e) => setPhone(e.target.value)}
+					/>
+					<label htmlFor="phone" className="label">
+						Phone Number
+					</label>
+				</div>
+				<div className="group">
+					<input
+						type="email"
+						className="input"
+						placeholder="Email address"
+						id="email"
+						required
+						name="email"
+						value={myUser ? myUser.email : null}
+					/>
+					<label htmlFor="email" className="label">
+						Email address
+					</label>
+				</div>
+			</Section>
 			<PaystackButton className="btn" custom_fields {...componentProps} />
 		</Wrapper>
 	);
@@ -128,39 +145,71 @@ const Wrapper = styled.div`
 	flex-direction: column;
 `;
 
-const StyledPaystackPayout = styled.div`
-	.form {
-		background: var(--clr-white);
-		max-width: var(--fixed-width);
-		margin: 0 auto;
-		margin-bottom: 4rem;
-		padding: 1rem 2rem;
-		border-radius: var(--radius);
+const Section = styled.section`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: var(--clr-primary-10);
+	padding: 3rem;
+	width: 100%;
+	border-radius: 7px;
+
+	&group:not(:last-child) {
+		margin-bottom: 2rem;
 	}
-	.form input {
-		background: var(--clr-grey-10);
-		border-color: transparent;
-		border-radius: var(--radius);
-		padding: 0.25rem 0.5rem;
+
+	.input-error {
+		border-bottom: 3px solid red;
 	}
-	.form-control {
-		margin: 0.5rem 0;
-		display: grid;
-		grid-template-columns: 100px 1fr;
-		align-items: center;
+	.errorMsg {
+		font-size: 10px;
+		color: red;
 	}
-	.form button,
-	.btn {
-		display: inline-block;
-		background: var(--clr-black);
-		color: var(--clr-white);
-		border-color: transparent;
-		margin-top: 1rem;
-		letter-spacing: var(--spacing);
-		padding: 0.15rem 0.25rem;
-		text-transform: capitalize;
-		border-radius: var(--radius);
-		cursor: pointer;
+	.input {
+		font-size: 1.3rem;
+		font-family: inherit;
+		color: inherit;
+		padding: 1rem 1rem;
+		border-radius: 6px;
+		background-color: var(--clr-primary-7);
+		border: none;
+		border-bottom: 3px solid transparent;
+		width: 100%;
+		display: block;
+		transition: all 0.3s;
+
+		&:focus {
+			outline: none;
+			box-shadow: 0 0.3rem 0.5rem black;
+			border-bottom: 3px solid var(--clr-primary-10);
+			.input-error {
+				border-bottom: 3px solid red;
+			}
+		}
+
+		&::-webkit-input-placeholder {
+			color: black;
+		}
+	}
+	.input-error {
+		border-bottom: 3px solid red;
+	}
+	.label {
+		font-size: 1rem;
+		font-weight: 700;
+		margin-left: 2rem;
+		margin-top: 0.9rem;
+		margin-bottom: 1rem;
+		display: block;
+		transition: all 0.3s;
+	}
+
+	.input:placeholder-shown + .label {
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-4rem);
 	}
 `;
+
 export default PaystackPayout;

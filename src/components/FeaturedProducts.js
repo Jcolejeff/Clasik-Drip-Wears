@@ -25,9 +25,11 @@ const FeaturedProducts = () => {
 				<div className="underline"></div>
 			</div>
 			<div className="section-center featured">
-				{featured.map((product) => {
-					return <Product key={product.id} {...product}></Product>;
-				})}
+				{featured
+					.map((product) => {
+						return <Product key={product.id} {...product}></Product>;
+					})
+					.slice(0, 7)}
 			</div>
 			<Link to="/products" className="btn">
 				all products

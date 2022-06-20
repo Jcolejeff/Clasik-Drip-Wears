@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import heroBcg from "../assets/hero-bcg.jpg";
-import heroBcg2 from "../assets/hero-bcg-2.jpeg";
+import heroBcg from "../assets/hero-bcg.jpeg";
+import { Slide } from "react-awesome-reveal";
 
 const Hero = () => {
 	return (
@@ -22,9 +22,21 @@ const Hero = () => {
 					shop now
 				</Link>
 			</article>
+			<article className="mobile-image">
+				<Slide left>
+					<img
+						src="https://res.cloudinary.com/clasikdrip/image/upload/v1655739072/ben_iwara_wgi_Rht_Bc_N_Ig_unsplash_2_95f612edb8.jpg"
+						alt=""
+					/>
+				</Slide>
+			</article>
 			<article className="img-container">
 				<img src={heroBcg} alt="table" className="main-img" />
-				<img src={heroBcg2} alt="perosn working" className="accent-img" />
+				<img
+					src="https://res.cloudinary.com/clasikdrip/image/upload/v1655739072/thumbnail_ben_iwara_wgi_Rht_Bc_N_Ig_unsplash_2_95f612edb8.jpg?width=4372&height=2478"
+					alt="second image"
+					className="accent-img"
+				/>
 			</article>
 		</Wrapper>
 	);
@@ -34,6 +46,15 @@ const Wrapper = styled.section`
 	min-height: 60vh;
 	display: grid;
 	place-items: center;
+	.mobile-image {
+		margin-block: 3rem;
+		width: 98%;
+		img {
+			width: 100%;
+			box-shadow: var(--dark-shadow);
+			border-radius: var(--radius);
+		}
+	}
 	.img-container {
 		display: none;
 	}
@@ -46,6 +67,9 @@ const Wrapper = styled.section`
 		font-size: 1rem;
 	}
 	@media (min-width: 992px) {
+		.mobile-image {
+			display: none;
+		}
 		height: calc(100vh - 5rem);
 		grid-template-columns: 1fr 1fr;
 		gap: 8rem;
