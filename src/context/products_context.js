@@ -22,6 +22,7 @@ const initialState = {
 	single_product_loading: false,
 	single_product_error: false,
 	single_product: {},
+	slide: [],
 };
 
 const ProductsContext = React.createContext();

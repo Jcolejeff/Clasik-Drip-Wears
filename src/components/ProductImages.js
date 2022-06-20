@@ -5,7 +5,7 @@ const ProductImages = ({
 	images = { data: [{ attributes: { url: "" } }] },
 }) => {
 	const [main, setMain] = useState(images.data[0]);
-	console.log(main.attributes.url);
+
 	return (
 		<Wrapper>
 			<img src={main.attributes.url} alt="main     image" className="main" />

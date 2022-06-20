@@ -7,9 +7,11 @@ import AmountButtons from "./AmountButtons";
 
 const AddToCart = ({ product }) => {
 	const { addToCart } = useCartContext();
-	const { id, stock, colors } = product;
+	const { id, stock, colors, sizes } = product;
 	const [mainColor, setMainColor] = useState(colors[0]);
+	const [mainSize, setMainSize] = useState(sizes[0]);
 	const [amount, setAmount] = useState(1);
+
 	const increase = () => {
 		setAmount((OldAmount) => {
 			let tempAmount = OldAmount + 1;
@@ -30,8 +32,26 @@ const AddToCart = ({ product }) => {
 	};
 	return (
 		<Wrapper>
+			<div className="form-control">
+				<h5>Sizes Available</h5>
+				<select
+					name="Sizes"
+					value={mainSize}
+					className="sizes"
+					onChange={(e) => setMainSize(e.target.value)}
+				>
+					{sizes.map((item, index) => {
+						return (
+							<option key={index} value={item}>
+								{item}
+							</option>
+						);
+					})}
+				</select>
+			</div>
 			<div className="colors">
 				<span> colors:</span>
+
 				<div>
 					{colors.map((color, index) => {
 						return (
@@ -59,7 +79,7 @@ const AddToCart = ({ product }) => {
 					to="/cart"
 					className="btn"
 					onClick={() => {
-						addToCart(id, mainColor, amount, product);
+						addToCart(id, mainColor, amount, product, mainSize);
 					}}
 				>
 					add to cart
@@ -70,7 +90,12 @@ const AddToCart = ({ product }) => {
 };
 
 const Wrapper = styled.section`
-	margin-top: 2rem;
+	margin-top: 3rem;
+	.form-control {
+		display: flex;
+		gap: 3rem;
+		margin-block: 2rem;
+	}
 	.colors {
 		display: grid;
 		grid-template-columns: 125px 1fr;

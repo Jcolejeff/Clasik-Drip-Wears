@@ -23,11 +23,13 @@ const products_reducer = (state, action) => {
 		const featured_products = action.payload.filter(
 			(product) => product.featured === true
 		);
+		const slide = action.payload.filter((product) => product.slide === true);
 		return {
 			...state,
 			products_loading: false,
 			products: action.payload,
 			featured_products,
+			slide,
 		};
 	}
 	if (action.type === GET_PRODUCTS_ERROR) {
