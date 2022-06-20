@@ -75,6 +75,7 @@ function PaystackPayout() {
 				}}
 			></form>
 			<Section>
+				<h4>Please check your Email for shipping details</h4>
 				<div className="group">
 					<input
 						type="text"
@@ -154,6 +155,10 @@ const Section = styled.section`
 	padding: 3rem;
 	width: 100%;
 	border-radius: 7px;
+	h4 {
+		width: 80%;
+		margin-block-end: 1rem;
+	}
 
 	&group:not(:last-child) {
 		margin-bottom: 2rem;

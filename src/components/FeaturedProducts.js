@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Error from "./Error";
 import Loading from "./Loading";
 import Product from "./Product";
+import { Slide } from "react-awesome-reveal";
 
 const FeaturedProducts = () => {
 	const {
@@ -25,11 +26,13 @@ const FeaturedProducts = () => {
 				<div className="underline"></div>
 			</div>
 			<div className="section-center featured">
-				{featured
-					.map((product) => {
-						return <Product key={product.id} {...product}></Product>;
-					})
-					.slice(0, 7)}
+				<Slide triggerOnce={true} direction="right">
+					{featured
+						.map((product) => {
+							return <Product key={product.id} {...product}></Product>;
+						})
+						.slice(0, 7)}
+				</Slide>
 			</div>
 			<Link to="/products" className="btn">
 				all products

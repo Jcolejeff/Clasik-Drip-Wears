@@ -23,7 +23,7 @@ const Hero = () => {
 				</Link>
 			</article>
 			<article className="mobile-image">
-				<Slide left>
+				<Slide>
 					<img
 						src="https://res.cloudinary.com/clasikdrip/image/upload/v1655739072/ben_iwara_wgi_Rht_Bc_N_Ig_unsplash_2_95f612edb8.jpg"
 						alt=""
