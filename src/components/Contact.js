@@ -1,7 +1,23 @@
 import React from "react";
 import styled from "styled-components";
+import { useProductsContext } from "../context/products_context";
+
 import "react-slideshow-image/dist/styles.css";
 const Contact = () => {
+	const { slide } = useProductsContext();
+	const Images = slide.map((image) => {
+		return image.images;
+	});
+
+	const data = Images.map((image) => {
+		return image.data;
+	});
+	const images = data
+		.map((image) => {
+			return image[0].attributes.url;
+		})
+		.slice(0, 10);
+	console.log(images);
 	return (
 		<Wrapper>
 			{/* use formspree to collect email */}

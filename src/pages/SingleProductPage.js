@@ -3,6 +3,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { useProductsContext } from "../context/products_context";
 import { single_product_url as url } from "../utils/constants";
 import { formatPrice } from "../utils/helpers";
+import ReactMarkdown from "react-markdown";
 import {
 	Loading,
 	Error,
@@ -58,7 +59,7 @@ const SingleProductPage = () => {
 					<section className="content">
 						<h2>{name}</h2>
 						<h4 className="price">NGN {price}</h4>
-						<p className="desc">{description}</p>
+						<ReactMarkdown className="description">{description}</ReactMarkdown>
 						<p className="info">
 							<span>Available :</span> {stock > 0 ? "In Stock" : "Out of Stock"}
 						</p>
