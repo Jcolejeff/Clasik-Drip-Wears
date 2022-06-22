@@ -51,7 +51,7 @@ function PaystackPayout() {
 			],
 		},
 		amount: (total_amount + shipping_fee) * 100,
-		publicKey: "pk_test_bb903e670173c21bb2617b96bb39a681e52ccf1c",
+		publicKey: process.env.REACT_APP_PAYSTACK_PUBLIC_KEY,
 	};
 	// you can call this function anything
 	const handlePaystackCloseAction = () => {
