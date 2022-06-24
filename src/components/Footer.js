@@ -9,21 +9,19 @@ const Footer = () => {
 		<Wrapper>
 			<Slide>
 				<section>
-					<>
-						<h3>Contact Us</h3>
-						<h5>
-							Email: <br />
-							<a href="mailto:clahsikdrip@gmail.com">clahsikdrip@gmail.com</a>
-						</h5>
-						<h5>
-							Phone: <br />
-							<a href="tel:+2348033369900">+234 803 336 9900</a> <br />
-						</h5>
-						<h5>
-							Whatsapp: <br />
-							<a href="tel:+2348033369900">+234 803 336 9900</a>
-						</h5>
-					</>
+					<h3>Contact Us</h3>
+					<h5>
+						Email: <br />
+						<a href="mailto:clahsikdrip@gmail.com">clahsikdrip@gmail.com</a>
+					</h5>
+					<h5>
+						Phone: <br />
+						<a href="tel:+2348033369900">+234 803 336 9900</a> <br />
+					</h5>
+					<h5>
+						Whatsapp: <br />
+						<a href="tel:+2348033369900">+234 803 336 9900</a>
+					</h5>
 				</section>
 
 				<section className="page-links">
@@ -32,7 +30,7 @@ const Footer = () => {
 					<Link to="/products">Products</Link>
 					<Link to="/about">About Us</Link>
 				</section>
-				<div className="links">
+				<section className="links">
 					<h5>
 						&copy;{new Date().getFullYear()}
 						<span> Clasik Drip Wears</span>
@@ -61,7 +59,7 @@ const Footer = () => {
 							</a>
 						</li>
 					</ul>
-				</div>
+				</section>
 			</Slide>
 		</Wrapper>
 	);
