@@ -55,7 +55,7 @@ const NavContainer = styled.nav`
 	justify-content: center;
 	border-bottom: 1px solid #e6e6e6;
 	margin-block-end: 4rem;
-
+	background-color: var(--clr-white);
 	.nav-center {
 		width: 90vw;
 		margin: 0 auto;

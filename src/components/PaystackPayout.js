@@ -144,6 +144,7 @@ function PaystackPayout() {
 const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
+	margin-inline: 1.3rem;
 `;
 
 const Section = styled.section`
@@ -156,11 +157,7 @@ const Section = styled.section`
 	width: 100%;
 	border-radius: 7px;
 	h4 {
-		width: 80%;
-		margin-block-end: 1rem;
-	}
-
-	&group:not(:last-child) {
+		text-align: center;
 		margin-bottom: 2rem;
 	}
 

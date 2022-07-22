@@ -46,6 +46,7 @@ const Wrapper = styled.section`
 	min-height: 60vh;
 	display: grid;
 	place-items: center;
+
 	.mobile-image {
 		margin-block: 3rem;
 		width: 98%;

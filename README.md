@@ -1,22 +1,37 @@
-## Notes
+## Table of contents
 
-#### Older React Version
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [HOW TO RUN](#useful-resources)
 
-```
-"react": "^16.13.1",
-"react-dom": "^16.13.1",
-"react-scripts": "3.4.3",
-```
+## Overview
 
-#### Current React Version
+An interactive trivia webapp
 
-```
-"react": "^17.0.1",
-"react-dom": "^17.0.1",
-"react-scripts": "4.0.0",
-```
+### Screenshot
 
-#### Alternative fix
+![](./screenshot.png)
 
-.env file in the root
-FAST_REFRESH=FALSE
+### Links
+
+- Live Site URL: [live](https://trivia-plus.netlify.app/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [Styled Components](https://styled-components.com/) - For styles
+- OPENTDB API
+
+## HOW TO RUN
+
+Clone repo then npm install
