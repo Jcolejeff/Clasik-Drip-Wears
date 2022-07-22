@@ -9,7 +9,7 @@
 
 ## Overview
 
-An interactive trivia webapp
+An e-commerce site for cloths and accessories
 
 ### Screenshot
 
@@ -17,7 +17,7 @@ An interactive trivia webapp
 
 ### Links
 
-- Live Site URL: [live](https://trivia-plus.netlify.app/)
+- Live Site URL: [live](https://clasikdrip.com/)
 
 ## My process
 
@@ -30,7 +30,10 @@ An interactive trivia webapp
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 - [Styled Components](https://styled-components.com/) - For styles
-- OPENTDB API
+- strapi Cms
+- auth0
+- react paystack
+- react icons
 
 ## HOW TO RUN
 
