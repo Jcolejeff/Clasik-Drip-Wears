@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { PaystackButton } from "react-paystack";
 import { useCartContext } from "../context/cart_context";
 import { useUserContext } from "../context/user_context";
@@ -13,12 +13,12 @@ function PaystackPayout() {
 	const { clearCart, cart, total_amount, shipping_fee } = useCartContext();
 	const { myUser } = useUserContext();
 	console.log(myUser);
-	const history = useHistory();
+	const navigate = useNavigate();
 	// you can call this function anything
 	const handlePaystackSuccessAction = (reference) => {
 		// Implementation for whatever you want to do with reference and after success call.
 		clearCart();
-		history.push("/products");
+		navigate("/products");
 		console.log(reference);
 	};
 	const config = {
@@ -56,7 +56,7 @@ function PaystackPayout() {
 	// you can call this function anything
 	const handlePaystackCloseAction = () => {
 		// implementation for  whatever you want to do when the Paystack dialog closed.
-
+		navigate("/cart");
 		console.log("closed");
 	};
 

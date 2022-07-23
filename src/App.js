@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navbar, Sidebar, Footer } from "./components";
 import "react-slideshow-image/dist/styles.css";
 
@@ -22,32 +22,22 @@ function App() {
 				<Navbar></Navbar>
 				<Sidebar></Sidebar>
 
-				<Switch>
-					<Route exact path="/">
-						<Home></Home>
-					</Route>
-					<Route exact path="/about">
-						<About></About>
-					</Route>
-					<Route exact path="/cart">
-						<Cart></Cart>
-					</Route>
-					<Route exact path="/products">
-						<Products></Products>
-					</Route>
+				<Routes>
+					<Route path="/" element={<Home />}></Route>
+					<Route path="products" element={<Products />}></Route>
+					<Route path="about" element={<About />}></Route>
+					<Route path="cart" element={<Cart />}></Route>
+					<Route path="products/:id" element={<SingleProduct />}></Route>
+					<Route path="* " element={<Error />}></Route>
 					<Route
-						exact
-						path="/products/:id"
-						children={<SingleProduct></SingleProduct>}
+						path="checkout"
+						element={
+							<PrivateRoute>
+								<Checkout />
+							</PrivateRoute>
+						}
 					></Route>
-
-					<PrivateRoute exact path="/checkout">
-						<Checkout></Checkout>
-					</PrivateRoute>
-					<Route path="*">
-						<Error></Error>
-					</Route>
-				</Switch>
+				</Routes>
 				<Footer></Footer>
 			</Router>
 		</AuthWrapper>
