@@ -39,6 +39,7 @@ export const services = [
 	},
 ];
 
-export const products_url = "https://course-api.com/react-store-products";
+export const products_url =
+	"https://limitless-dusk-73909.herokuapp.com/api/clasikdrips/?populate=*";
 
 export const single_product_url = `https://limitless-dusk-73909.herokuapp.com/api/clasikdrips/`;

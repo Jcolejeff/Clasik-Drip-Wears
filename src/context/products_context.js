@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect, useReducer } from "react";
 import reducer from "../reducers/products_reducer";
+import { products_url } from "../utils/constants";
 // import { products_url as url } from "../utils/constants";
 import {
 	SIDEBAR_OPEN,
@@ -35,12 +36,10 @@ export const ProductsProvider = ({ children }) => {
 	const closeSidebar = () => {
 		dispatch({ type: SIDEBAR_CLOSE });
 	};
-	const fetchProducts = async (url) => {
+	const fetchProducts = async () => {
 		dispatch({ type: GET_PRODUCTS_BEGIN });
 		try {
-			const newData = await axios.get(
-				"https://limitless-dusk-73909.herokuapp.com/api/clasikdrips/?populate=*"
-			);
+			const newData = await axios.get(products_url);
 			const newItems = newData.data.data;
 			const newProducts = newItems.map((product) => {
 				return { id: product.id, ...product.attributes };

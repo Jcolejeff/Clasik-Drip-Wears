@@ -5,7 +5,7 @@ import Error from "./Error";
 import Loading from "./Loading";
 import { Slide } from "react-slideshow-image";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
-const Contact = () => {
+const SlideShow = () => {
 	const {
 		slide,
 		products_loading: loading,
@@ -23,7 +23,6 @@ const Contact = () => {
 			return image[0].attributes.url;
 		})
 		.slice(0, 10);
-	console.log(images);
 
 	const slideImages = images.map((image) => {
 		return { url: image };
@@ -80,4 +79,4 @@ const Wrapper = styled.section`
 	}
 `;
 
-export default Contact;
+export default SlideShow;
