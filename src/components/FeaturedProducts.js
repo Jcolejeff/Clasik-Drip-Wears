@@ -6,6 +6,9 @@ import Error from "./Error";
 import Loading from "./Loading";
 import Product from "./Product";
 import { Slide } from "react-awesome-reveal";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import { Fade } from "react-awesome-reveal";
 
 const FeaturedProducts = () => {
 	const {
@@ -14,33 +17,48 @@ const FeaturedProducts = () => {
 		featured_products: featured,
 	} = useProductsContext();
 	if (loading) {
-		return <Loading></Loading>;
+		return (
+			<SkeletonWrapper>
+				<Skeleton count={1} height="80vh" />;
+			</SkeletonWrapper>
+		);
 	}
 	if (error) {
 		return <Error></Error>;
 	}
 	return (
 		<Wrapper className="section">
-			<div className="title">
-				<h2>featured products</h2>
-				<div className="underline"></div>
-			</div>
-			<div className="section-center featured">
-				<Slide triggerOnce={true} direction="right">
-					{featured
-						.map((product) => {
-							return <Product key={product.id} {...product}></Product>;
-						})
-						.slice(0, 7)}
-				</Slide>
-			</div>
-			<Link to="/products" className="btn">
-				all products
-			</Link>
+			<Fade triggerOnce={true}>
+				<div className="title">
+					<h2> Featured products</h2>
+					<div className="underline"></div>
+				</div>
+				<div className="section-center featured">
+					<Slide triggerOnce={true} direction="right">
+						{featured
+							.map((product) => {
+								return <Product key={product.id} {...product}></Product>;
+							})
+							.slice(0, 7)}
+					</Slide>
+				</div>
+				<Link to="/products" className="btn">
+					all products
+				</Link>
+			</Fade>
 		</Wrapper>
 	);
 };
 
+const SkeletonWrapper = styled.div`
+	display: block;
+	margin-inline: auto;
+	width: 90%;
+	line-height: 3;
+	@media (min-width: 40rem) {
+		margin-top: 8rem;
+	}
+`;
 const Wrapper = styled.section`
 	background: var(--clr-grey-10);
 

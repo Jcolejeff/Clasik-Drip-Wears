@@ -1,11 +1,18 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import styled from "styled-components";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import { Fade } from "react-awesome-reveal";
 
 const AuthWrapper = ({ children }) => {
 	const { isLoading, error } = useAuth0();
 	if (isLoading) {
-		return <Wrapper>Loading...</Wrapper>;
+		return (
+			<Wrapper>
+				<Skeleton count={1} height="100vh" />;
+			</Wrapper>
+		);
 	}
 	if (error) {
 		return (
@@ -15,13 +22,15 @@ const AuthWrapper = ({ children }) => {
 		);
 	}
 
-	return <>{children}</>;
+	return <Fade>{children}</Fade>;
 };
 
 const Wrapper = styled.section`
 	min-height: 100vh;
-	display: grid;
-	place-items: center;
+	display: block;
+	margin-inline: auto;
+	width: 96%;
+	line-height: 3;
 `;
 
 export default AuthWrapper;

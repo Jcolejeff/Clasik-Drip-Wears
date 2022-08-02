@@ -20,22 +20,10 @@ export const links = [
 
 export const services = [
 	{
-		id: 1,
-		icon: <GiCompass />,
-		title: "Best Quality",
-		text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi",
-	},
-	{
-		id: 2,
-		icon: <GiDiamondHard />,
-		title: "Best Price",
-		text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi",
-	},
-	{
 		id: 3,
 		icon: <GiStabbedNote />,
 		title: "Best Service",
-		text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi",
+		text: " Here you have the best quality as it comes 👌🏽 at the most affordable prices with smooth and fast deliveries.🚛💨",
 	},
 ];
 

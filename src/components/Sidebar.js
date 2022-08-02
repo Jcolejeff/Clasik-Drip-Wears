@@ -75,14 +75,11 @@ const SidebarContainer = styled.div`
 		justify-self: center;
 		height: 80px;
 	}
-	.links {
-		margin-bottom: 10rem;
-		margin-top: 8rem;
-	}
+
 	.links a {
 		display: block;
 		text-align: center;
-		font-size: 1rem;
+		font-size: 1.5rem;
 		text-transform: capitalize;
 		padding: 1rem 1.5rem;
 		color: var(--clr-grey-3);
@@ -107,6 +104,9 @@ const SidebarContainer = styled.div`
 		transition: var(--transition);
 		transform: translate(100%);
 		z-index: -1;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 	.show-sidebar {
 		transform: translate(0);

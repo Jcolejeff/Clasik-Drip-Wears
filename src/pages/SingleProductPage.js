@@ -4,6 +4,10 @@ import { useProductsContext } from "../context/products_context";
 import { single_product_url as url } from "../utils/constants";
 import { formatPrice } from "../utils/helpers";
 import ReactMarkdown from "react-markdown";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import { Fade } from "react-awesome-reveal";
+
 import {
 	Loading,
 	Error,
@@ -38,7 +42,19 @@ const SingleProductPage = () => {
 		// eslint-disable-next-line
 	}, [error]);
 	if (loading) {
-		return <Loading />;
+		return (
+			<div
+				style={{
+					border: "1px solid #fff",
+					display: "block",
+					lineHeight: 3,
+					marginInline: "auto",
+					width: "90%",
+				}}
+			>
+				<Skeleton count={1} height="80vh" />;
+			</div>
+		);
 	}
 	if (error) {
 		return <Error />;
@@ -50,32 +66,37 @@ const SingleProductPage = () => {
 	return (
 		<Wrapper>
 			<PageHero title={name} product />
-			<div className="section section-center page">
-				<Link to="/products" className="btn">
-					back to products
-				</Link>
-				<div className="product-center">
-					<ProductImages images={images}></ProductImages>
-					<section className="content">
-						<h2>{name}</h2>
-						<h4 className="price">NGN {price}</h4>
-						<ReactMarkdown className="description">{description}</ReactMarkdown>
-						<p className="info">
-							<span>Available :</span> {stock > 0 ? "In Stock" : "Out of Stock"}
-						</p>
-						<p className="info">
-							<span>SKU :</span>
-							{sku}
-						</p>
-						<p className="info">
-							<span>Brand :</span>
-							{brand}
-						</p>
-						<hr />
-						{stock > 0 && <AddToCart product={product}></AddToCart>}
-					</section>
+			<Fade top triggerOnce={true}>
+				<div className="section section-center page">
+					<Link to="/products" className="btn">
+						back to products
+					</Link>
+					<div className="product-center">
+						<ProductImages images={images}></ProductImages>
+						<section className="content">
+							<h2>{name}</h2>
+							<h4 className="price">NGN {price}</h4>
+							<ReactMarkdown className="description">
+								{description}
+							</ReactMarkdown>
+							<p className="info">
+								<span>Available :</span>{" "}
+								{stock > 0 ? "In Stock" : "Out of Stock"}
+							</p>
+							<p className="info">
+								<span>SKU :</span>
+								{sku}
+							</p>
+							<p className="info">
+								<span>Brand :</span>
+								{brand}
+							</p>
+							<hr />
+							{stock > 0 && <AddToCart product={product}></AddToCart>}
+						</section>
+					</div>
 				</div>
-			</div>
+			</Fade>
 		</Wrapper>
 	);
 };

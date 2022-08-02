@@ -12,11 +12,11 @@ const Hero = () => {
 					Choose Quality <br></br>
 					Drip Drifferent
 				</h1>
+
 				<p>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores,
-					unde quo repudiandae assumenda nisi incidunt nihil ratione autem
-					doloremque cupiditate eius sunt ut inventore perspiciatis provident
-					reiciendis necessitatibus laudantium totam!
+					Hi there <span>👋</span>
+					<p>Welcome to clahsikdrip wears </p>{" "}
+					<p>Enjoy shopping with us! 🛍️🛒 </p>
 				</p>
 				<Link to="/products" className="btn hero-btn">
 					shop now
@@ -46,6 +46,7 @@ const Wrapper = styled.section`
 	min-height: 60vh;
 	display: grid;
 	place-items: center;
+	text-align: center;
 
 	.mobile-image {
 		margin-block: 3rem;
@@ -56,16 +57,23 @@ const Wrapper = styled.section`
 			border-radius: var(--radius);
 		}
 	}
+	h1 {
+		font-size: 2rem;
+	}
 	.img-container {
 		display: none;
 	}
+	span {
+		font-size: 2rem;
 
+		@media (min-width: 50rem) {
+			font-size: 4rem;
+		}
+	}
 	p {
-		line-height: 2;
 		max-width: 45em;
-		margin-bottom: 2rem;
 		color: var(--clr-grey-5);
-		font-size: 1rem;
+		font-size: 1.2rem;
 	}
 	@media (min-width: 992px) {
 		.mobile-image {
@@ -78,7 +86,7 @@ const Wrapper = styled.section`
 			margin-bottom: 2rem;
 		}
 		p {
-			font-size: 1.25rem;
+			font-size: 1.7rem;
 		}
 		.hero-btn {
 			padding: 0.75rem 1.5rem;

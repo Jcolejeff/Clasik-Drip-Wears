@@ -7,16 +7,18 @@ import { Link } from "react-router-dom";
 const Product = ({ images, name, price, id }) => {
 	return (
 		<Wrapper>
-			<div className="container">
-				<img src={images.data[0].attributes.url} alt={name} />
-				<Link to={`/products/${id}`} className="link">
-					<FaSearch></FaSearch>
-				</Link>
-			</div>
-			<footer>
-				<h5>{name}</h5>
-				<p>{formatPrice(price)}</p>
-			</footer>
+			<Link to={`/products/${id}`}>
+				<div className="container">
+					<img src={images.data[0].attributes.url} alt={name} />
+					<Link to={`/products/${id}`} className="link">
+						<FaSearch></FaSearch>
+					</Link>
+				</div>
+				<footer>
+					<h5>{name}</h5>
+					<p>{formatPrice(price)}</p>
+				</footer>
+			</Link>
 		</Wrapper>
 	);
 };

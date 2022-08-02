@@ -2,9 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { useProductsContext } from "../context/products_context";
 import Error from "./Error";
-import Loading from "./Loading";
 import { Slide } from "react-slideshow-image";
-import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import { Fade } from "react-awesome-reveal";
 const SlideShow = () => {
 	const {
 		slide,
@@ -29,39 +30,52 @@ const SlideShow = () => {
 	});
 
 	if (loading) {
-		return <Loading></Loading>;
+		return (
+			<SkeletonWrapper>
+				<Skeleton count={1} height="80vh" />;
+			</SkeletonWrapper>
+		);
 	}
 	if (error) {
 		return <Error></Error>;
 	}
 	return (
-		<Wrapper className="slide-container">
-			<Slide
-				arrows={false}
-				duration={2000}
-				indicators={true}
-				pauseOnHover={false}
-				responsive={[{ breakpoint: 768, settings: { slidesToShow: 2 } }]}
-				// prevArrow={<FiChevronLeft size="3rem" />}
-				// nextArrow={<FiChevronRight size="3rem" />}
-			>
-				{slideImages.map((slideImage, index) => (
-					<div className="each-slide" key={index}>
-						<div style={{ backgroundImage: `url(${slideImage.url})` }}></div>
-					</div>
-				))}
-			</Slide>
-		</Wrapper>
+		<Fade triggerOnce={true}>
+			<Wrapper className="slide-container">
+				<Slide
+					arrows={false}
+					duration={2000}
+					indicators={true}
+					pauseOnHover={false}
+					responsive={[{ breakpoint: 768, settings: { slidesToShow: 2 } }]}
+					// prevArrow={<FiChevronLeft size="3rem" />}
+					// nextArrow={<FiChevronRight size="3rem" />}
+				>
+					{slideImages.map((slideImage, index) => (
+						<div className="each-slide" key={index}>
+							<div style={{ backgroundImage: `url(${slideImage.url})` }}></div>
+						</div>
+					))}
+				</Slide>
+			</Wrapper>
+		</Fade>
 	);
 };
+const SkeletonWrapper = styled.div`
+	display: block;
+	margin-inline: auto;
+	width: 90%;
+	line-height: 3;
+	@media (min-width: 40rem) {
+		margin-top: 8rem;
+	}
+`;
 const Wrapper = styled.section`
 	padding: 1rem;
 
 	margin: 2rem auto;
 	@media (min-width: 768px) {
-		margin-block-start: 7rem;
-
-		width: 80%;
+		width: 98%;
 	}
 	.each-slide > div {
 		display: flex;

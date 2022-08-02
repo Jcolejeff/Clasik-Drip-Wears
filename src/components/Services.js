@@ -11,11 +11,6 @@ const Services = () => {
 						Why choose Us? <br />
 						lets find Out
 					</h3>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-						nihil explicabo repellat eos veritatis beatae quae quod. Expedita,
-						autem deleniti.
-					</p>
 				</article>
 				<div className="services-center">
 					{services.map((service) => {
@@ -35,37 +30,34 @@ const Services = () => {
 };
 
 const Wrapper = styled.section`
+	padding: 5rem 0;
+	background: var(--clr-primary-9);
 	.services-center {
-		grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+		/* grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+		gap: 2.5rem;
+		display: grid; */
+		margin-top: 1.5rem;
 	}
 	h3,
 	h4 {
 		color: var(--clr-primary-1);
 	}
-	padding: 5rem 0;
-
-	background: var(--clr-primary-10);
 
 	.header h3 {
-		margin-bottom: 2rem;
+		text-align: center;
 	}
-	p {
-		margin-bottom: 0;
-		line-height: 1.8;
-		color: var(--clr-primary-3);
-	}
-	.services-center {
-		margin-top: 4rem;
-		display: grid;
-		gap: 2.5rem;
-	}
+
 	.service {
-		background: var(--clr-primary-7);
+		background: var(--clr-white);
+		margin-inline: auto;
 		text-align: center;
 		padding: 2.5rem 2rem;
+		max-width: 65rem;
 		border-radius: var(--radius);
+
 		p {
 			color: var(--clr-primary-2);
+			font-size: 1.4rem;
 		}
 	}
 	span {
@@ -82,22 +74,11 @@ const Wrapper = styled.section`
 			font-size: 2rem;
 		}
 	}
-	@media (min-width: 992px) {
-		.header {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-		}
-	}
-	@media (min-width: 576px) {
+
+	/* @media (min-width: 576px) {
 		.services-center {
 			grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
 		}
-	}
-	@media (min-width: 1280px) {
-		padding: 0;
-		.section-center {
-			transform: translateY(5rem);
-		}
-	}
+	} */
 `;
 export default Services;
