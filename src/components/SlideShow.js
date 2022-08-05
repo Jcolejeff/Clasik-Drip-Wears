@@ -32,7 +32,8 @@ const SlideShow = () => {
 	if (loading) {
 		return (
 			<SkeletonWrapper>
-				<Skeleton count={1} height="80vh" />;
+				<Skeleton count={1} height="80vh" highlightColor="hsl(205, 85%, 87%)" />
+				;
 			</SkeletonWrapper>
 		);
 	}

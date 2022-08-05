@@ -10,7 +10,12 @@ const AuthWrapper = ({ children }) => {
 	if (isLoading) {
 		return (
 			<Wrapper>
-				<Skeleton count={1} height="100vh" />;
+				<Skeleton
+					count={1}
+					height="100vh"
+					highlightColor="hsl(205, 85%, 87%)"
+				/>
+				;
 			</Wrapper>
 		);
 	}

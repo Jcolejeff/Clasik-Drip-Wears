@@ -79,10 +79,9 @@ const Wrapper = styled.footer`
 	font-size: 0.8rem;
 	font-weight: 600;
 	gap: 2rem;
-
 	box-shadow: var(--light-shadow);
 	padding: 3.5rem;
-	padding-block-end: 0.1rem;
+	padding-block-end: 1rem;
 	border-radius: 10px;
 	.contact {
 		display: flex;
