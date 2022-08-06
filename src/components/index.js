@@ -16,6 +16,7 @@ import Sort from "./Sort";
 import CartContent from "./CarContent";
 import PageHero from "./PageHero";
 import Paystack from "./PaystackPayout";
+import ScrollToTop from "./ScrollTop";
 export {
 	FeaturedProducts,
 	Navbar,
@@ -35,5 +36,6 @@ export {
 	CartContent,
 	PageHero,
 	Paystack,
+	ScrollToTop,
 };
 // setting up an entry point for node so we can have less import in our app.js...

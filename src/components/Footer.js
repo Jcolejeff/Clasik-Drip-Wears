@@ -99,6 +99,7 @@ const Wrapper = styled.footer`
 	.links {
 		ul {
 			display: flex;
+
 			li {
 				margin: 1.5rem;
 				font-size: 1.4rem;
@@ -116,7 +117,7 @@ const Wrapper = styled.footer`
 		text-transform: none;
 		line-height: 1.25;
 	}
-	@media (min-width: 768px) {
+	@media (min-width: 560px) {
 		flex-direction: row;
 		justify-content: space-around;
 		align-items: flex-start;
