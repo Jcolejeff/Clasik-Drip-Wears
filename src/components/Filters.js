@@ -216,10 +216,11 @@ const Wrapper = styled.section`
 
 	.btn {
 		text-transform: capitalize;
+		display: block;
+		margin-top: 1rem;
 		@media (max-width: 768px) {
-			margin-left: 8rem;
+			margin-inline: auto;
 		}
-		margin-top: 0.8rem;
 	}
 	@media (min-width: 768px) {
 		.content {

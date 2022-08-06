@@ -205,8 +205,3 @@ p {
 .page {
 	min-height: calc(100vh - (20vh + 10rem));
 }
-.paystack {
-	color: aqua;
-	padding: 4px;
-	background-color: blueviolet;
-}

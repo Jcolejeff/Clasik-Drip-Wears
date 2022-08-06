@@ -90,7 +90,7 @@ const AddToCart = ({ product }) => {
 };
 
 const Wrapper = styled.section`
-	margin-top: 3rem;
+	margin-top: 5rem;
 	.form-control {
 		display: flex;
 		gap: 3rem;
@@ -131,8 +131,12 @@ const Wrapper = styled.section`
 		opacity: 1;
 	}
 	.btn-container {
-		margin-top: 4rem;
-		margin-left: 6rem;
+		display: flex;
+		flex-direction: column;
+		margin-top: 3rem;
+		@media (max-width: 63rem) {
+			align-items: center;
+		}
 	}
 
 	.btn {
