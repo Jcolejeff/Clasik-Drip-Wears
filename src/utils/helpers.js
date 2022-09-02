@@ -10,7 +10,7 @@ export const getUniqueValues = (data, type) => {
 	let unique = data.map((item) => {
 		let value = item[type];
 		if (type == "colors") {
-			return value;
+			return value.map((color) => color.toLowerCase());
 		} else {
 			return value.toLowerCase();
 		}

@@ -86,18 +86,18 @@ const filter_reducer = (state, action) => {
 		// category filter
 		if (category !== "all") {
 			tempProducts = tempProducts.filter((product) => {
-				return product.category === category;
+				return product.category.toLowerCase() === category;
 			});
 		}
 		if (brand !== "all") {
 			tempProducts = tempProducts.filter((product) => {
-				return product.brand === brand;
+				return product.brand.toLowerCase() === brand;
 			});
 		}
 		// color filter
 		if (color !== "all") {
 			tempProducts = tempProducts.filter((product) => {
-				return product.colors.find((c) => c === color);
+				return product.colors.find((c) => c.toLowerCase() === color);
 			});
 		}
 		// price filter
