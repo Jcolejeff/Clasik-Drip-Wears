@@ -9,7 +9,11 @@ export const formatPrice = (number) => {
 export const getUniqueValues = (data, type) => {
 	let unique = data.map((item) => {
 		let value = item[type];
-		return value;
+		if (type == "colors") {
+			return value;
+		} else {
+			return value.toLowerCase();
+		}
 	});
 	if (type === "colors") {
 		unique = unique.flat();
