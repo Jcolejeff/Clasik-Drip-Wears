@@ -9,11 +9,14 @@ import {
 	CLEAR_FILTERS,
 } from "../actions";
 
+
 const filter_reducer = (state, action) => {
 	// created  a new array so we don't reference the same array for both state values
 	if (action.type === LOAD_PRODUCTS) {
 		let maxPrice = action.payload.map((p) => {
+		
 			return p.price;
+
 		});
 		maxPrice = Math.max(...maxPrice);
 		return {
@@ -30,6 +33,7 @@ const filter_reducer = (state, action) => {
 		};
 	}
 	if (action.type === SET_GRIDVIEW) {
+	
 		return {
 			...state,
 			grid_view: true,
@@ -42,11 +46,12 @@ const filter_reducer = (state, action) => {
 		};
 	}
 	if (action.type === SORT_PRODUCTS) {
+		
 		const { sort, filtered_products } = state;
 		let tempProducts = [...filtered_products];
 
 		if (sort === "price-lowest") {
-			// s
+			// 
 			tempProducts = tempProducts.sort((a, b) => {
 				// if the function returns a negative number, a is placed before b ,but if it returns a positive number, b is placed before a
 				if (a.price < b.price) {

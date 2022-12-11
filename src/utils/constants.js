@@ -28,6 +28,6 @@ export const services = [
 ];
 
 export const products_url =
-	"https://limitless-dusk-73909.herokuapp.com/api/clasikdrips/?populate=*";
+	"https://clasikdrip.up.railway.app/api/clasikdrips/?populate=*";
 
-export const single_product_url = `https://limitless-dusk-73909.herokuapp.com/api/clasikdrips/`;
+export const single_product_url = `https://clasikdrip.up.railway.app/api/clasikdrips/`;
