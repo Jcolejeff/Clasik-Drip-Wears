@@ -7,7 +7,7 @@ import { FaTwitter, FaMailBulk, FaInstagram, FaWhatsapp } from "react-icons/fa";
 const Footer = () => {
 	return (
 		<Wrapper>
-			<Slide>
+			
 				<section>
 					<h3>Contact Us</h3>
 					<h5>
@@ -60,7 +60,7 @@ const Footer = () => {
 						</li>
 					</ul>
 				</section>
-			</Slide>
+			
 		</Wrapper>
 	);
 };
